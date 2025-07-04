@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'theme.scss';
+
+.hack-icons {
+  font-family: 'hack-nerd-regular';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mat-app-background {
+    background-color: var(--mat-app-background-color, #303030);
+    color: var(--mat-body-text-color, white);
+}
+
+body {
+    font-size: 14px;
+    font-family: 'hack-nerd-regular', "noto-sans", sans-serif;
+    background: var(--mat-app-background-color, #303030);
+    color: var(--mat-body-text-color, white);
+    height: 100vh;
+    margin: 0;
+}
+
+body.dark {
+    color-scheme: dark;
+}
+
+a {
+    color: unset;
+}
+
+mat-chip-grid.tags-chips-grid {
+  div {
+    /* display: block; */
+    flex-flow: unset;
+  }
+}
+mat-form-field.tags-chips-grid {
+  .mat-mdc-form-field-infix {
+    padding-bottom: unset;
+    padding-top: unset;
+  }
+}
+
+button.search-submit, button.toggle-navbar {
+    box-shadow: var(--mat-card-elevated-container-elevation, var(--mat-sys-level2));
+}
+button.toggle-navbar mat-icon{
+    left: -2px;
+}
+button.search-submit.mdc-icon-button mat-icon {
+    font-size: 20px;
+    text-align: left;
+    /* left: 2px; */
+}
+.advanced-form-button.mat-mdc-button mat-icon.mat-icon {
+    width: 24px;
+    left: -2px;
+}

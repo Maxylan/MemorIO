@@ -1,0 +1,15 @@
+<form
+    id="upload-form"
+    (ngSubmit)="onSubmit($event)"
+>
+    @if (files() && files()!.length > 0) {
+        <div class="uploaded-photos-container">
+            @for (file of files(); track file.name) {
+                <app-upload-card-thumbnail
+                    [alt]="file.name"
+                    [file]="file"
+                />
+            }
+        </div>
+    }
+</form>

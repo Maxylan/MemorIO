@@ -1,0 +1,33 @@
+{
+  "name": "garden",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "deploy": "ng build --deploy-url /garden/ --base-href /garden/",
+    "build": "ng build --configuration development --deploy-url /garden/ --base-href /garden/",
+    "watch": "ng build --watch --configuration development --deploy-url /garden/ --base-href /garden/"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^20.0.4",
+    "@angular/cdk": "^20.0.3",
+    "@angular/common": "^20.0.4",
+    "@angular/compiler": "^20.0.4",
+    "@angular/core": "^20.0.4",
+    "@angular/forms": "^20.0.4",
+    "@angular/material": "^20.0.3",
+    "@angular/platform-browser": "^20.0.4",
+    "@angular/platform-browser-dynamic": "^20.0.4",
+    "@angular/router": "^20.0.4",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.0.3",
+    "@angular/cli": "^20.0.3",
+    "@angular/compiler-cli": "^20.0.4",
+    "@types/node": "^22.13.14",
+    "typescript": "~5.8.3"
+  }
+}

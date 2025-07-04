@@ -1,0 +1,29 @@
+# Blobstorage
+projects/memorio-api/blobs/*
+
+# Configuration
+.env
+*/.env
+configs/db.env
+projects/memorio-api/appsettings.*
+
+# Generated
+_generated/*
+__generated/*
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# misc.
+.vscode/*
+.history/*
+.vs/
+.ntvs_analysis.dat
+
+# Black holes
+node_modules/
+*/node_modules

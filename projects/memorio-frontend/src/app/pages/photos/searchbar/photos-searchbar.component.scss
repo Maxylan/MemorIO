@@ -1,0 +1,66 @@
+@use '@angular/material' as mat;
+
+toolbar-base button {
+  flex-shrink: 1;
+  flex-grow: 0;
+}
+toolbar-base mat-form-field {
+  flex-grow: 1;
+  margin: 0 auto 0 0.64rem ;
+}
+.advanced-form-button {
+  margin: 0 0.64rem;
+}
+.toggle-navbar {
+  margin-right: 0.64rem;
+}
+
+mat-form-field {
+  margin: 0 2rem;
+  max-width: 24rem;
+  width: 36%;
+
+  @include mat.form-field-overrides((
+    focus-state-layer-opacity: 0.16,
+    filled-container-color: rgba(0,0,0,0),
+    // container-vertical-padding: 0,
+    container-height: 32px,
+  ));
+}
+photo-tags-input {
+  margin-right: 2rem;
+  max-width: 32rem;
+  width: 64%;
+}
+
+a.select-mode-display-chip {
+  position: absolute;
+  z-index: 10;
+  left: 38%;
+  top: 4rem;
+}
+
+photo-tags-input {
+  white-space: nowrap;
+}
+.advanced-form {
+  top: -2rem;
+  left: 1rem;
+  width: 32rem;
+  max-width: calc(100% - 4.8rem);
+  padding: 1rem;
+  position: absolute;
+  border: 1px solid rgba(0,0,0,0);
+  background-color: var(--mat-sidenav-container-background-color, var(--mat-sys-surface));
+  border-radius: var(--mat-card-elevated-container-shape, var(--mat-sys-corner-medium));
+  box-shadow: var(--mat-card-elevated-container-elevation, var(--mat-sys-level2));
+  transition: var(--fbc-transition);
+  transition-duration: .24s;
+}
+.hidden-toolbar {
+  z-index: -1;
+}
+.expanded-toolbar {
+  z-index: 4;
+  top: 4rem;
+}
