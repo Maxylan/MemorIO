@@ -1,4 +1,4 @@
-namespace Reception.Database.Models;
+namespace MemorIO.Database.Models;
 
 /// <summary>
 /// The <see cref="FavoriteAlbumRelation"/> data transfer object (DTO).

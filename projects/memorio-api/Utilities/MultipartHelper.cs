@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using Microsoft.Net.Http.Headers;
 
-namespace Reception.Utilities;
+namespace MemorIO.Utilities;
 
 /// <summary>
 /// Lifted from example-implementation for File Streaming at Microsoft Learn.<br/>

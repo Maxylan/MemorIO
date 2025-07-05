@@ -1,6 +1,6 @@
-using Reception.Database;
+using MemorIO.Database;
 
-namespace Reception.Utilities;
+namespace MemorIO.Utilities;
 
 public static class Postbox
 {

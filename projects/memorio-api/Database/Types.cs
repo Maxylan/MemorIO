@@ -1,4 +1,4 @@
-namespace Reception.Database;
+namespace MemorIO.Database;
 
 public enum Dimension
 {

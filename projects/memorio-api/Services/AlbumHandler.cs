@@ -1,13 +1,13 @@
 using System.Net;
-using Reception.Middleware.Authentication;
+using MemorIO.Middleware.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Database.Models;
-using Reception.Models;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Database.Models;
+using MemorIO.Models;
 
-namespace Reception.Services;
+namespace MemorIO.Services;
 
 public class AlbumHandler(
     ILoggingService<AlbumHandler> logging,
@@ -280,7 +280,7 @@ public class AlbumHandler(
     }
 
     /// <summary>
-    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{Reception.Database.Models.ITag}"/>).
+    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{MemorIO.Database.Models.ITag}"/>).
     /// </summary>
     public async Task<ActionResult<IEnumerable<TagDTO>>> AddTags(int albumId, IEnumerable<ITag> tags)
     {
@@ -328,7 +328,7 @@ public class AlbumHandler(
     }
 
     /// <summary>
-    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{Reception.Database.Models.ITag}"/>).
+    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{MemorIO.Database.Models.ITag}"/>).
     /// </summary>
     public async Task<ActionResult<IEnumerable<TagDTO>>> RemoveTags(int albumId, IEnumerable<ITag> tags)
     {

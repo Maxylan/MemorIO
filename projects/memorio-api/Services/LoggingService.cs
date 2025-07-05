@@ -1,10 +1,10 @@
-using Reception.Middleware;
-using Reception.Interfaces;
-using Reception.Database.Models;
-using Reception.Database;
-using Reception.Models;
+using MemorIO.Middleware;
+using MemorIO.Interfaces;
+using MemorIO.Database.Models;
+using MemorIO.Database;
+using MemorIO.Models;
 
-namespace Reception.Services {
+namespace MemorIO.Services {
     public class LoggingService(
         ILogger logger,
         EventDataAggregator eventAggregator

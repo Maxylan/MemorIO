@@ -6,12 +6,12 @@ using System.Text.Encodings.Web;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using Microsoft.AspNetCore.Authentication;
-using ReceptionAuthorizationService = Reception.Interfaces.IAuthorizationService;
-using Reception.Database;
-using Reception.Database.Models;
-using Reception.Interfaces;
+using MemorIOAuthorizationService = MemorIO.Interfaces.IAuthorizationService;
+using MemorIO.Database;
+using MemorIO.Database.Models;
+using MemorIO.Interfaces;
 
-namespace Reception.Middleware.Authentication;
+namespace MemorIO.Middleware.Authentication;
 
 /// <summary>
 /// Custom implementation of the opinionated <see cref="IAuthenticationHandler"/> '<see cref="AuthenticationHandler{AuthenticationSchemeOptions}"/>'.
@@ -19,7 +19,7 @@ namespace Reception.Middleware.Authentication;
 /// </summary>
 public class MemoAuth(
     ILoggingService<MemoAuth> logging,
-    ReceptionAuthorizationService service,
+    MemorIOAuthorizationService service,
     IOptionsMonitor<AuthenticationSchemeOptions> options,
     ILoggerFactory logger,
     UrlEncoder encoder

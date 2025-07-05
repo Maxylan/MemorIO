@@ -1,8 +1,8 @@
-using Reception.Models;
-using Reception.Database.Models;
+using MemorIO.Models;
+using MemorIO.Database.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Reception.Interfaces.DataAccess;
+namespace MemorIO.Interfaces.DataAccess;
 
 public interface ITagService
 {

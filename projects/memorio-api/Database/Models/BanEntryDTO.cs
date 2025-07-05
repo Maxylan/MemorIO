@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Reception.Database.Models;
+namespace MemorIO.Database.Models;
 
 /// <summary>
 /// The <see cref="BanEntry"/> data transfer object (DTO).

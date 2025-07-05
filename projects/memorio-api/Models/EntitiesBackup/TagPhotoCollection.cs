@@ -1,14 +1,14 @@
 /*
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
-using Reception.Database.Models;
+using MemorIO.Database.Models;
 using Swashbuckle.AspNetCore.Annotations;
 */
 
-// namespace Reception.Models;
+// namespace MemorIO.Models;
 
 /// <summary>
-/// Collection of all photos (<see cref="Reception.Models.PhotoCollection"/>) tagged with the given <paramref name="tag"/>.
+/// Collection of all photos (<see cref="MemorIO.Models.PhotoCollection"/>) tagged with the given <paramref name="tag"/>.
 /// </summary>
 /*
 public record TagPhotoCollection

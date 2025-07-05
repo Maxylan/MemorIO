@@ -1,8 +1,8 @@
 using System.Net;
 using Microsoft.AspNetCore.Authorization;
-using Reception.Interfaces;
+using MemorIO.Interfaces;
 
-namespace Reception.Middleware.Authentication;
+namespace MemorIO.Middleware.Authentication;
 
 public class TokenRequirement : IAuthorizationRequirement
 {

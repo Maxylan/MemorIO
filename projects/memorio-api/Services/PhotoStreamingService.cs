@@ -8,16 +8,16 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
 using Microsoft.EntityFrameworkCore;
-using Reception.Middleware.Authentication;
-using Reception.Database.Models;
-using Reception.Database;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Utilities;
-using Reception.Constants;
-using Reception.Models;
+using MemorIO.Middleware.Authentication;
+using MemorIO.Database.Models;
+using MemorIO.Database;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Utilities;
+using MemorIO.Constants;
+using MemorIO.Models;
 
-namespace Reception.Services;
+namespace MemorIO.Services;
 
 public class PhotoStreamingService(
     IHttpContextAccessor contextAccessor,
@@ -30,7 +30,7 @@ public class PhotoStreamingService(
 {
     #region Create / Store photos.
     /// <summary>
-    /// Upload any amount of new photos/files (<see cref="Photo"/>, <seealso cref="Reception.Database.Models.DisplayPhoto"/>)
+    /// Upload any amount of new photos/files (<see cref="Photo"/>, <seealso cref="MemorIO.Database.Models.DisplayPhoto"/>)
     /// by streaming them directly to disk.
     /// </summary>
     /// <remarks>
@@ -47,7 +47,7 @@ public class PhotoStreamingService(
     }
 
     /// <summary>
-    /// Upload any amount of new photos/files (<see cref="Photo"/>, <seealso cref="Reception.Database.Models.DisplayPhoto"/>)
+    /// Upload any amount of new photos/files (<see cref="Photo"/>, <seealso cref="MemorIO.Database.Models.DisplayPhoto"/>)
     /// by streaming them directly to disk.
     /// </summary>
     /// <remarks>
@@ -327,11 +327,11 @@ public class PhotoStreamingService(
     }
 
     /// <summary>
-    /// Upload a new <see cref="Photo"/> (<seealso cref="Reception.Database.Models.Photo"/>) by streaming it directly to disk.
+    /// Upload a new <see cref="Photo"/> (<seealso cref="MemorIO.Database.Models.Photo"/>) by streaming it directly to disk.
     /// </summary>
     /// <remarks>
     /// An instance of <see cref="PhotosOptions"/> (<paramref name="opts"/>) has been repurposed to serve as the details of the
-    /// <see cref="Reception.Database.Models.Photo"/> database entity.
+    /// <see cref="MemorIO.Database.Models.Photo"/> database entity.
     /// </remarks>
     /// <returns><see cref="Photo"/></returns>
     protected async Task<Photo> UploadSinglePhoto(

@@ -1,8 +1,8 @@
-using Reception.Database.Models;
-using Reception.Database;
+using MemorIO.Database.Models;
+using MemorIO.Database;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Reception.Interfaces;
+namespace MemorIO.Interfaces;
 
 public interface IViewLinkService
 {

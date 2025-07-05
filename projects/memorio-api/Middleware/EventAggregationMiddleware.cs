@@ -1,4 +1,4 @@
-namespace Reception.Middleware;
+namespace MemorIO.Middleware;
 
 public class EventAggregationMiddleware
 {

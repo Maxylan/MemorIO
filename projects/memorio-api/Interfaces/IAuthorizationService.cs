@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Reception.Database.Models;
-using Reception.Database;
+using MemorIO.Database.Models;
+using MemorIO.Database;
 
-namespace Reception.Interfaces;
+namespace MemorIO.Interfaces;
 
 public interface IAuthorizationService
 {

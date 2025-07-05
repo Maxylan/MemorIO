@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
-using Reception.Database.Models;
+using MemorIO.Database.Models;
 
-namespace Reception.Middleware.Authentication;
+namespace MemorIO.Middleware.Authentication;
 
 /// <summary>
 /// Static collection of hardcoded response values

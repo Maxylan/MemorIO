@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Reception.Database;
-using Reception.Database.Models;
+using MemorIO.Database;
+using MemorIO.Database.Models;
 
-namespace Reception.Interfaces.DataAccess;
+namespace MemorIO.Interfaces.DataAccess;
 
 public interface ISessionService
 {

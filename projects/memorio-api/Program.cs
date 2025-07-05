@@ -1,18 +1,18 @@
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.OpenApi.Models;
-using Reception.Interfaces;
-using Reception.Interfaces.DataAccess;
-using Reception.Middleware;
-using Reception.Middleware.Authentication;
-using Reception.Services;
-using Reception.Services.DataAccess;
-using Reception.Database;
+using MemorIO.Interfaces;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Middleware;
+using MemorIO.Middleware.Authentication;
+using MemorIO.Services;
+using MemorIO.Services.DataAccess;
+using MemorIO.Database;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using Npgsql.NameTranslation;
 
-namespace Reception;
+namespace MemorIO;
 
 public sealed class Program
 {
@@ -21,17 +21,17 @@ public sealed class Program
 
     public static string? AppName => System.Environment.GetEnvironmentVariable("MEMORIO_NAME");
     public static string? AppVersion => System.Environment.GetEnvironmentVariable("MEMORIO_RELEASE");
-    public static string? ApiName => System.Environment.GetEnvironmentVariable("RECEPTION_NAME");
-    public static string? ApiVersion => System.Environment.GetEnvironmentVariable("RECEPTION_VERSION");
-    public static string? ApiPathBase => System.Environment.GetEnvironmentVariable("RECEPTION_BASE_PATH");
-    public static string? ApiInternalUrl => System.Environment.GetEnvironmentVariable("RECEPTION_URL");
+    public static string? ApiName => System.Environment.GetEnvironmentVariable("MEMORIO_NAME");
+    public static string? ApiVersion => System.Environment.GetEnvironmentVariable("MEMORIO_VERSION");
+    public static string? ApiPathBase => System.Environment.GetEnvironmentVariable("MEMORIO_BASE_PATH");
+    public static string? ApiInternalUrl => System.Environment.GetEnvironmentVariable("MEMORIO_URL");
     public static string? ApiUrl => System.Environment.GetEnvironmentVariable("APP_URL") ?? ApiInternalUrl;
 
     public static string SecretaryName => System.Environment.GetEnvironmentVariable("SECRETARY_BASE_PATH") ?? "/secretary";
     public static string SecretaryUrl => (System.Environment.GetEnvironmentVariable("SECRETARY_URL") ?? "http://localhost");
 
     public static string Environment => (
-        System.Environment.GetEnvironmentVariable("RECEPTION_ENVIRONMENT") ??
+        System.Environment.GetEnvironmentVariable("MEMORIO_ENVIRONMENT") ??
         System.Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ??
         DEVELOPMENT_FLAG
     );
@@ -66,16 +66,16 @@ public sealed class Program
         builder.Services
             .AddAuthentication(conf =>
             {
-                conf.DefaultAuthenticateScheme = Reception.Middleware.Authentication.Constants.SCHEME;
-                // conf.DefaultScheme = Reception.Middleware.Authentication.Constants.SCHEME;
+                conf.DefaultAuthenticateScheme = MemorIO.Middleware.Authentication.Constants.SCHEME;
+                // conf.DefaultScheme = MemorIO.Middleware.Authentication.Constants.SCHEME;
             })
             .AddScheme<AuthenticationSchemeOptions, MemoAuth>(
-                Reception.Middleware.Authentication.Constants.SCHEME,
+                MemorIO.Middleware.Authentication.Constants.SCHEME,
                 opts => { opts.Validate(); }
             );
 
         builder.Services.AddAuthorizationBuilder()
-            .AddDefaultPolicy(Reception.Middleware.Authentication.Constants.AUTHENTICATED_POLICY, policy => policy.RequireAuthenticatedUser());
+            .AddDefaultPolicy(MemorIO.Middleware.Authentication.Constants.AUTHENTICATED_POLICY, policy => policy.RequireAuthenticatedUser());
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(conf =>
@@ -97,7 +97,7 @@ public sealed class Program
                 Reference = new OpenApiReference()
                 {
                     Type = ReferenceType.SecurityScheme,
-                    Id = Reception.Middleware.Authentication.Constants.SCHEME
+                    Id = MemorIO.Middleware.Authentication.Constants.SCHEME
                 }
             };
 
@@ -106,7 +106,7 @@ public sealed class Program
                 [scheme] = []
             };
 
-            conf.AddSecurityDefinition(Reception.Middleware.Authentication.Constants.SCHEME, scheme);
+            conf.AddSecurityDefinition(MemorIO.Middleware.Authentication.Constants.SCHEME, scheme);
             conf.AddSecurityRequirement(requirement);
 
             conf.AddServer(new OpenApiServer()
@@ -205,7 +205,7 @@ public sealed class Program
         }
         else {
             app.UseCors(options => {
-                options.WithHeaders(Reception.Middleware.Authentication.Constants.SESSION_TOKEN_HEADER);
+                options.WithHeaders(MemorIO.Middleware.Authentication.Constants.SESSION_TOKEN_HEADER);
                 options.WithOrigins("https://torpssons.se");
             });
         }

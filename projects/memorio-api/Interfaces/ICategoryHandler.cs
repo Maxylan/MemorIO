@@ -1,8 +1,8 @@
-using Reception.Models;
-using Reception.Database.Models;
+using MemorIO.Models;
+using MemorIO.Database.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Reception.Interfaces;
+namespace MemorIO.Interfaces;
 
 public interface ICategoryHandler
 {
@@ -41,8 +41,8 @@ public interface ICategoryHandler
     public abstract Task<ActionResult<CategoryDTO>> UpdateCategory(MutateCategory mut);
 
     /// <summary>
-    /// Removes an <see cref="Reception.Database.Models.Album"/> (..identified by PK <paramref name="albumId"/>) from the
-    /// <see cref="Reception.Database.Models.Category"/> identified by its PK <paramref name="categoryId"/>.
+    /// Removes an <see cref="MemorIO.Database.Models.Album"/> (..identified by PK <paramref name="albumId"/>) from the
+    /// <see cref="MemorIO.Database.Models.Category"/> identified by its PK <paramref name="categoryId"/>.
     /// </summary>
     public abstract Task<ActionResult> RemoveAlbum(int categoryId, int albumId);
 

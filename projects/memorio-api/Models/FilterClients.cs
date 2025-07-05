@@ -1,4 +1,4 @@
-namespace Reception.Models;
+namespace MemorIO.Models;
 
 public class FilterClients
 {

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Text.Json.Serialization;
 
-namespace Reception.Database.Models;
+namespace MemorIO.Database.Models;
 
 /// <summary>
 /// The <see cref="LogEntry"/> db-entity.
@@ -73,17 +73,17 @@ public partial class LogEntry
     public LogFormat Format => new(this);
 
     /// <summary>
-    /// Set the <see cref="Reception.Database.Models.Method"/> of this entity using a string (<paramref name="method"/>)
+    /// Set the <see cref="MemorIO.Database.Models.Method"/> of this entity using a string (<paramref name="method"/>)
     /// </summary>
     public void SetMethod(string? method) => this.Method = method?.ToUpper() switch
     {
-        "HEAD" => Reception.Database.Method.HEAD,
-        "GET" => Reception.Database.Method.GET,
-        "POST" => Reception.Database.Method.POST,
-        "PUT" => Reception.Database.Method.PUT,
-        "PATCH" => Reception.Database.Method.PATCH,
-        "DELETE" => Reception.Database.Method.DELETE,
-        _ => Reception.Database.Method.UNKNOWN
+        "HEAD" => MemorIO.Database.Method.HEAD,
+        "GET" => MemorIO.Database.Method.GET,
+        "POST" => MemorIO.Database.Method.POST,
+        "PUT" => MemorIO.Database.Method.PUT,
+        "PATCH" => MemorIO.Database.Method.PATCH,
+        "DELETE" => MemorIO.Database.Method.DELETE,
+        _ => MemorIO.Database.Method.UNKNOWN
     };
 
     /// <summary>

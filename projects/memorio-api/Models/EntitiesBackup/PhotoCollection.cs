@@ -1,12 +1,12 @@
 /*
 using System.Diagnostics.CodeAnalysis;
-using Reception.Database.Models;
+using MemorIO.Database.Models;
 */
 
-// namespace Reception.Models;
+// namespace MemorIO.Models;
 
 /// <summary>
-/// Collection of all different sizes of a <see cref="Reception.Models.Photo"/>.
+/// Collection of all different sizes of a <see cref="MemorIO.Models.Photo"/>.
 /// </summary>
 /*
 public record PhotoCollection
@@ -47,15 +47,15 @@ public record PhotoCollection
     {
         if (source.Dimension != Dimension.SOURCE)
         {
-            throw new ArgumentException($"Source Dimension {nameof(Reception.Models.Photo)} didn't match '{Dimension.SOURCE}' ({source.Dimension})", nameof(source));
+            throw new ArgumentException($"Source Dimension {nameof(MemorIO.Models.Photo)} didn't match '{Dimension.SOURCE}' ({source.Dimension})", nameof(source));
         }
         if (medium is not null && medium.Dimension != Dimension.MEDIUM)
         {
-            throw new ArgumentException($"Medium Dimension {nameof(Reception.Models.Photo)} didn't match '{Dimension.MEDIUM}' ({medium.Dimension})", nameof(medium));
+            throw new ArgumentException($"Medium Dimension {nameof(MemorIO.Models.Photo)} didn't match '{Dimension.MEDIUM}' ({medium.Dimension})", nameof(medium));
         }
         if (thumbnail is not null && thumbnail.Dimension != Dimension.THUMBNAIL)
         {
-            throw new ArgumentException($"Thumbnail Dimension {nameof(Reception.Models.Photo)} didn't match '{Dimension.THUMBNAIL}' ({thumbnail.Dimension})", nameof(thumbnail));
+            throw new ArgumentException($"Thumbnail Dimension {nameof(MemorIO.Models.Photo)} didn't match '{Dimension.THUMBNAIL}' ({thumbnail.Dimension})", nameof(thumbnail));
         }
 
         Source = source;

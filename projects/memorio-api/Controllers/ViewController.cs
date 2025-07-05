@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Reception.Database.Models;
-using Reception.Interfaces;
+using MemorIO.Database.Models;
+using MemorIO.Interfaces;
 
-namespace Reception.Controllers;
+namespace MemorIO.Controllers;
 
 [ApiController]
 [Route("links/view")]

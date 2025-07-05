@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Reception.Database.Models;
+namespace MemorIO.Database.Models;
 
 /// <summary>
 /// The <see cref="Filepath"/> data transfer object (DTO).
@@ -37,13 +37,13 @@ public class FilepathDTO : Filepath, IDataTransferObject<Filepath>
 
     /*
     public bool IsSource =>
-        this.Dimension == Reception.Database.Dimension.SOURCE;
+        this.Dimension == MemorIO.Database.Dimension.SOURCE;
 
     public bool IsMedium =>
-        this.Dimension == Reception.Database.Dimension.MEDIUM;
+        this.Dimension == MemorIO.Database.Dimension.MEDIUM;
 
     public bool IsThumbnail =>
-        this.Dimension == Reception.Database.Dimension.THUMBNAIL;
+        this.Dimension == MemorIO.Database.Dimension.THUMBNAIL;
     */
 
     /// <summary>

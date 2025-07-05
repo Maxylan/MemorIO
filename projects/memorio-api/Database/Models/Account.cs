@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace Reception.Database.Models;
+namespace MemorIO.Database.Models;
 
 /// <summary>
 /// The <see cref="Account"/> db-entity.

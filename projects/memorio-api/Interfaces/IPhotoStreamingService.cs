@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
-using Reception.Models;
+using MemorIO.Models;
 
-namespace Reception.Interfaces;
+namespace MemorIO.Interfaces;
 
 public interface IPhotoStreamingService
 {
     #region Create / Store photos.
     /// <summary>
-    /// Upload any amount of new photos/files (<see cref="Photo"/>, <seealso cref="Reception.Database.Models.DisplayPhoto"/>)
+    /// Upload any amount of new photos/files (<see cref="Photo"/>, <seealso cref="MemorIO.Database.Models.DisplayPhoto"/>)
     /// by streaming them directly to disk.
     /// </summary>
     /// <remarks>
@@ -24,7 +24,7 @@ public interface IPhotoStreamingService
     }
 
     /// <summary>
-    /// Upload any amount of new photos/files (<see cref="Photo"/>, <seealso cref="Reception.Database.Models.DisplayPhoto"/>)
+    /// Upload any amount of new photos/files (<see cref="Photo"/>, <seealso cref="MemorIO.Database.Models.DisplayPhoto"/>)
     /// by streaming them directly to disk.
     /// </summary>
     /// <remarks>

@@ -1,14 +1,14 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Reception.Middleware.Authentication;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Database.Models;
-using Reception.Models;
-using Reception.Database;
+using MemorIO.Middleware.Authentication;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Database.Models;
+using MemorIO.Models;
+using MemorIO.Database;
 
-namespace Reception.Services.DataAccess;
+namespace MemorIO.Services.DataAccess;
 
 public class ClientService(
     IHttpContextAccessor contextAccessor,

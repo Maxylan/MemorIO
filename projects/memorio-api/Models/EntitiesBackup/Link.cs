@@ -6,11 +6,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Reception.Services.DataAccess;
+using MemorIO.Services.DataAccess;
 using Swashbuckle.AspNetCore.Annotations;
 */
 
-// namespace Reception.Database.ModelsBackup;
+// namespace MemorIO.Database.ModelsBackup;
 
 /*
 [Table("links", Schema = "magedb")]

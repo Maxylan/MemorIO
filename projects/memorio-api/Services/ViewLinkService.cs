@@ -1,14 +1,14 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Reception.Middleware.Authentication;
-using Reception.Database.Models;
-using Reception.Database;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Utilities;
+using MemorIO.Middleware.Authentication;
+using MemorIO.Database.Models;
+using MemorIO.Database;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Utilities;
 
-namespace Reception.Services;
+namespace MemorIO.Services;
 
 public class ViewLinkService(
     ILoggingService<ViewLinkService> logging,

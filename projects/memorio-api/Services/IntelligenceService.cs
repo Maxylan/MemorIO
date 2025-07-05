@@ -1,15 +1,15 @@
 using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Database.Models;
-using Reception.Database;
-using Reception.Models;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Database.Models;
+using MemorIO.Database;
+using MemorIO.Models;
 using Microsoft.AspNetCore.Mvc;
-using Reception.Utilities;
+using MemorIO.Utilities;
 
-namespace Reception.Services;
+namespace MemorIO.Services;
 
 public class IntelligenceService(
     ILoggingService<IntelligenceService> logging,

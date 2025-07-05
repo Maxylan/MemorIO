@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using Reception.Database.Models;
-using Reception.Database;
-using Reception.Models;
+using MemorIO.Database.Models;
+using MemorIO.Database;
+using MemorIO.Models;
 
-namespace Reception.Interfaces.DataAccess;
+namespace MemorIO.Interfaces.DataAccess;
 
 public interface IPublicLinkService
 {

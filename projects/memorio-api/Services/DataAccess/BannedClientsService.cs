@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Database.Models;
-using Reception.Models;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Database.Models;
+using MemorIO.Models;
 
-namespace Reception.Services.DataAccess;
+namespace MemorIO.Services.DataAccess;
 
 public class BannedClientsService() : IBannedClientsService
 {

@@ -1,7 +1,7 @@
-using Reception.Database;
-using Reception.Database.Models;
+using MemorIO.Database;
+using MemorIO.Database.Models;
 
-namespace Reception.Middleware;
+namespace MemorIO.Middleware;
 
 public class EventDataAggregator
 {

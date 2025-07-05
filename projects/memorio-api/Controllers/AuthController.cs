@@ -1,19 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
-using ReceptionAuthorizationService = Reception.Interfaces.IAuthorizationService;
-using Reception.Interfaces.DataAccess;
-using Reception.Models;
-using Reception.Database.Models;
-using Reception.Database;
+using MemorIOAuthorizationService = MemorIO.Interfaces.IAuthorizationService;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Models;
+using MemorIO.Database.Models;
+using MemorIO.Database;
 
-namespace Reception.Controllers;
+namespace MemorIO.Controllers;
 
 [ApiController]
 [Route("auth")]
 [Produces("application/json")]
 public class AuthController(
-    ReceptionAuthorizationService authorization,
+    MemorIOAuthorizationService authorization,
     ISessionService sessions
     ) : ControllerBase
 {

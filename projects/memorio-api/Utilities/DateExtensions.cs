@@ -1,4 +1,4 @@
-namespace Reception.Utilities;
+namespace MemorIO.Utilities;
 
 public static class DateExtensions
 {

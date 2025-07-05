@@ -1,4 +1,4 @@
-namespace Reception.Database;
+namespace MemorIO.Database;
 
 /// <summary>
 /// A 'Data Transfer Object' of the <see cref="TEntity"/> db-entity.

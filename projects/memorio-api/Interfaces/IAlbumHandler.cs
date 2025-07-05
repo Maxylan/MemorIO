@@ -1,8 +1,8 @@
-using Reception.Models;
-using Reception.Database.Models;
+using MemorIO.Models;
+using MemorIO.Database.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Reception.Interfaces;
+namespace MemorIO.Interfaces;
 
 public interface IAlbumHandler
 {
@@ -69,12 +69,12 @@ public interface IAlbumHandler
     public abstract Task<ActionResult<DisplayAlbum>> RemovePhotos(int albumId, IEnumerable<int> photoIds);
 
     /// <summary>
-    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{Reception.Database.Models.ITag}"/>).
+    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{MemorIO.Database.Models.ITag}"/>).
     /// </summary>
     public abstract Task<ActionResult<IEnumerable<TagDTO>>> AddTags(int albumId, IEnumerable<ITag> tags);
 
     /// <summary>
-    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{Reception.Database.Models.ITag}"/>).
+    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{MemorIO.Database.Models.ITag}"/>).
     /// </summary>
     public abstract Task<ActionResult<IEnumerable<TagDTO>>> RemoveTags(int albumId, IEnumerable<ITag> tags);
 

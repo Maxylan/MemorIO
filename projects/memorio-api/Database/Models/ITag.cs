@@ -1,4 +1,4 @@
-namespace Reception.Database.Models;
+namespace MemorIO.Database.Models;
 
 /// <summary>
 /// Base of the <see cref="Tag"/> db-entity, to make internal API's easier to use.

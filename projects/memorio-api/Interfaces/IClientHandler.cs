@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Reception.Database.Models;
-using Reception.Models;
+using MemorIO.Database.Models;
+using MemorIO.Models;
 
-namespace Reception.Interfaces;
+namespace MemorIO.Interfaces;
 
 public interface IClientHandler
 {

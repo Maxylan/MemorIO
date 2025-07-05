@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Collections.Generic;
 
-namespace Reception.Models;
+namespace MemorIO.Models;
 
 public class OllamaRequest
 {

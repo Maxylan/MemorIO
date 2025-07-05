@@ -1,9 +1,9 @@
 // using Microsoft.Extensions.Caching.Memory;
 using Timer = System.Timers.Timer;
 using System.Timers;
-using Reception.Models;
+using MemorIO.Models;
 
-namespace Reception.Caching;
+namespace MemorIO.Caching;
 
 // TODO! Overengineered (..or, under-engineered?)
 public static class LoginTracker

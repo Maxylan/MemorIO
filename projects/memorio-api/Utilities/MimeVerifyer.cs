@@ -6,7 +6,7 @@ using Microsoft.Net.Http.Headers;
 using SixLabors.ImageSharp.Formats;
 using System.Globalization;
 
-namespace Reception.Utilities;
+namespace MemorIO.Utilities;
 
 /// <summary>
 /// My own implimentation of an ImageFormatDetector & MimeVerifyer, inspired by examples found at Microsoft Learn.<br/>

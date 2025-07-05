@@ -1,13 +1,13 @@
 using System.Net;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Database.Models;
-using Reception.Database;
-using Reception.Middleware.Authentication;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Database.Models;
+using MemorIO.Database;
+using MemorIO.Middleware.Authentication;
 
-namespace Reception.Services.DataAccess;
+namespace MemorIO.Services.DataAccess;
 
 public class SessionService(
     ILoggingService<SessionService> logging,

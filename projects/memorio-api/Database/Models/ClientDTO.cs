@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace Reception.Database.Models;
+namespace MemorIO.Database.Models;
 
 /// <summary>
 /// The <see cref="Client"/> data transfer object (DTO).

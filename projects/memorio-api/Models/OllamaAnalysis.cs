@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace Reception.Models;
+namespace MemorIO.Models;
 
 public class OllamaAnalysis : OllamaResponse
 {

@@ -1,12 +1,12 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Database.Models;
-using Reception.Models;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Database.Models;
+using MemorIO.Models;
 
-namespace Reception.Services;
+namespace MemorIO.Services;
 
 public class AccountHandler(
     ILoggingService<AccountHandler> logging,

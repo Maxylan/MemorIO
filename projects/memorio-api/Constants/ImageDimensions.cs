@@ -1,4 +1,4 @@
-namespace Reception.Constants;
+namespace MemorIO.Constants;
 
 /// <summary>
 /// Image Constants.

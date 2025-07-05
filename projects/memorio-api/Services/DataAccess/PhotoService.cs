@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Reception.Middleware.Authentication;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Utilities;
-using Reception.Database.Models;
-using Reception.Database;
-using Reception.Models;
+using MemorIO.Middleware.Authentication;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Utilities;
+using MemorIO.Database.Models;
+using MemorIO.Database;
+using MemorIO.Models;
 using System.Net;
 
-namespace Reception.Services.DataAccess;
+namespace MemorIO.Services.DataAccess;
 
 public class PhotoService(
     MageDb db,
@@ -176,7 +176,7 @@ public class PhotoService(
 
     #region Get many photos.
     /// <summary>
-    /// Get all <see cref="Reception.Database.Models.Photo"/> instances matching a wide range of optional filtering / pagination options (<seealso cref="FilterPhotosOptions"/>).
+    /// Get all <see cref="MemorIO.Database.Models.Photo"/> instances matching a wide range of optional filtering / pagination options (<seealso cref="FilterPhotosOptions"/>).
     /// </summary>
     public virtual Task<ActionResult<IEnumerable<Photo>>> GetPhotos(Action<FilterPhotosOptions> opts)
     {
@@ -187,7 +187,7 @@ public class PhotoService(
     }
 
     /// <summary>
-    /// Assemble a <see cref="IEnumerable{Reception.Database.Models.Photo}"/> collection of Photos matching a wide range of optional
+    /// Assemble a <see cref="IEnumerable{MemorIO.Database.Models.Photo}"/> collection of Photos matching a wide range of optional
     /// filtering / pagination options (<seealso cref="FilterPhotosOptions"/>).
     /// </summary>
     public async Task<ActionResult<IEnumerable<Photo>>> GetPhotos(FilterPhotosOptions filter)
@@ -346,7 +346,7 @@ public class PhotoService(
 
 
     /// <summary>
-    /// Get all <see cref="Reception.Database.Models.Photo"/> instances by evaluating a wide range of optional search / pagination options (<seealso cref="PhotoSearchQuery"/>).
+    /// Get all <see cref="MemorIO.Database.Models.Photo"/> instances by evaluating a wide range of optional search / pagination options (<seealso cref="PhotoSearchQuery"/>).
     /// </summary>
     public virtual Task<ActionResult<IEnumerable<Photo>>> PhotoSearch(Action<PhotoSearchQuery> opts)
     {
@@ -357,7 +357,7 @@ public class PhotoService(
     }
 
     /// <summary>
-    /// Assemble a <see cref="IEnumerable{Reception.Database.Models.Photo}"/> collection of Photos by evaluating a wide range of optional
+    /// Assemble a <see cref="IEnumerable{MemorIO.Database.Models.Photo}"/> collection of Photos by evaluating a wide range of optional
     /// search / pagination options (<seealso cref="PhotoSearchQuery"/>).
     /// </summary>
     public Task<ActionResult<IEnumerable<Photo>>> PhotoSearch(PhotoSearchQuery searchQuery)
@@ -379,7 +379,7 @@ public class PhotoService(
 
     #region Create a photo entity.
     /// <summary>
-    /// Create a <see cref="Reception.Database.Models.Photo"/> in the database.
+    /// Create a <see cref="MemorIO.Database.Models.Photo"/> in the database.
     /// </summary>
     public async Task<ActionResult<Photo>> CreatePhoto(MutatePhoto mut)
     {
@@ -475,7 +475,7 @@ public class PhotoService(
     }
 
     /// <summary>
-    /// Create a <see cref="Reception.Database.Models.Photo"/> in the database.
+    /// Create a <see cref="MemorIO.Database.Models.Photo"/> in the database.
     /// </summary>
     public async Task<ActionResult<Photo>> CreatePhoto(Photo entity)
     {
@@ -646,7 +646,7 @@ public class PhotoService(
 
     #region Update a photo entity.
     /// <summary>
-    /// Toggles the 'Favorite' status of a <see cref="Reception.Database.Models.Photo"/> for a single user.
+    /// Toggles the 'Favorite' status of a <see cref="MemorIO.Database.Models.Photo"/> for a single user.
     /// </summary>
     public async Task<ActionResult> ToggleFavorite(int photoId)
     {
@@ -826,7 +826,7 @@ public class PhotoService(
 
 
     /// <summary>
-    /// Updates a <see cref="Reception.Database.Models.Photo"/> in the database.
+    /// Updates a <see cref="MemorIO.Database.Models.Photo"/> in the database.
     /// </summary>
     public async Task<ActionResult<Photo>> UpdatePhoto(MutatePhoto mut)
     {
@@ -1145,8 +1145,8 @@ public class PhotoService(
 
 
     /// <summary>
-    /// Adds the given <see cref="IEnumerable{Reception.Database.Models.Tag}"/> collection (<paramref name="tags"/>) to the
-    /// <see cref="Reception.Database.Models.Photo"/> identified by its PK <paramref name="photoId"/>.
+    /// Adds the given <see cref="IEnumerable{MemorIO.Database.Models.Tag}"/> collection (<paramref name="tags"/>) to the
+    /// <see cref="MemorIO.Database.Models.Photo"/> identified by its PK <paramref name="photoId"/>.
     /// </summary>
     public async Task<ActionResult<IEnumerable<Tag>>> AddTags(int photoId, IEnumerable<ITag> tags)
     {
@@ -1331,8 +1331,8 @@ public class PhotoService(
     }
 
     /// <summary>
-    /// Removes the given <see cref="IEnumerable{Reception.Database.Models.Tag}"/> collection (<paramref name="tags"/>) from
-    /// the <see cref="Reception.Database.Models.Photo"/> identified by its PK <paramref name="photoId"/>.
+    /// Removes the given <see cref="IEnumerable{MemorIO.Database.Models.Tag}"/> collection (<paramref name="tags"/>) from
+    /// the <see cref="MemorIO.Database.Models.Photo"/> identified by its PK <paramref name="photoId"/>.
     /// </summary>
     public async Task<ActionResult<IEnumerable<Tag>>> RemoveTags(int photoId, IEnumerable<ITag> tags)
     {
@@ -1495,7 +1495,7 @@ public class PhotoService(
 
     #region Delete a photo completely (blob, filepaths & photo)
     /// <summary>
-    /// Deletes a <see cref="Reception.Database.Models.Photo"/> (..identified by PK <paramref name="photoId"/>) ..completely,
+    /// Deletes a <see cref="MemorIO.Database.Models.Photo"/> (..identified by PK <paramref name="photoId"/>) ..completely,
     /// removing both the blob on-disk, and its database entry.
     /// </summary>
     public async Task<ActionResult> DeletePhoto(int photoId)
@@ -1529,7 +1529,7 @@ public class PhotoService(
         return await DeletePhoto(photo);
     }
     /// <summary>
-    /// Deletes a <see cref="Reception.Database.Models.Photo"/> (..identified by PK <paramref name="entity"/>) ..completely,
+    /// Deletes a <see cref="MemorIO.Database.Models.Photo"/> (..identified by PK <paramref name="entity"/>) ..completely,
     /// removing both the blob on-disk, and its database entry.
     /// </summary>
     public async Task<ActionResult> DeletePhoto(Photo entity)
@@ -1565,7 +1565,7 @@ public class PhotoService(
 
     #region Delete a blob from disk
     /// <summary>
-    /// Deletes the blob of a <see cref="Reception.Database.Models.Photo"/> from disk.
+    /// Deletes the blob of a <see cref="MemorIO.Database.Models.Photo"/> from disk.
     /// </summary>
     public async Task<ActionResult> DeletePhotoBlob(Filepath entity)
     {
@@ -1702,7 +1702,7 @@ public class PhotoService(
 
     #region Delete a photo entities from the database
     /// <summary>
-    /// Deletes a <see cref="Reception.Database.Models.Photo"/> (..and associated <see cref="Reception.Database.Models.Filepath"/> entities) ..from the database.
+    /// Deletes a <see cref="MemorIO.Database.Models.Photo"/> (..and associated <see cref="MemorIO.Database.Models.Filepath"/> entities) ..from the database.
     /// </summary>
     /// <remarks>
     /// <strong>Note:</strong> Since this does *not* delete the blob on-disk, be mindful you don't leave anything dangling..
@@ -1739,7 +1739,7 @@ public class PhotoService(
     }
 
     /// <summary>
-    /// Deletes a <see cref="Reception.Database.Models.Photo"/> (..and associated <see cref="Reception.Database.Models.Filepath"/> entities) ..from the database.
+    /// Deletes a <see cref="MemorIO.Database.Models.Photo"/> (..and associated <see cref="MemorIO.Database.Models.Filepath"/> entities) ..from the database.
     /// </summary>
     /// <remarks>
     /// <strong>Note:</strong> Since this does *not* delete the blob on-disk, be mindful you don't leave anything dangling..

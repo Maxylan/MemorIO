@@ -1,8 +1,8 @@
-using Reception.Database;
-using Reception.Database.Models;
+using MemorIO.Database;
+using MemorIO.Database.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Reception.Interfaces;
+namespace MemorIO.Interfaces;
 
 public interface IBlobService
 {

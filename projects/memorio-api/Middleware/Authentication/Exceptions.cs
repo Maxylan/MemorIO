@@ -1,6 +1,6 @@
-using Reception.Database.Models;
+using MemorIO.Database.Models;
 
-namespace Reception.Middleware.Authentication;
+namespace MemorIO.Middleware.Authentication;
 
 /// <summary>
 /// Collection of custom throwable exeptions (<seealso cref="Exception"/>)

@@ -1,4 +1,4 @@
-namespace Reception.Middleware.Authentication
+namespace MemorIO.Middleware.Authentication
 {
     /// <summary>
     /// Static collection of hardcoded parameter key names (<see cref="Microsoft.AspNetCore.Authentication.AuthenticationProperties"/>)

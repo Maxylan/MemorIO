@@ -2,9 +2,9 @@ using System.Text;
 using Npgsql.NameTranslation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using Reception.Database.Models;
+using MemorIO.Database.Models;
 
-namespace Reception.Database;
+namespace MemorIO.Database;
 
 public partial class MageDb : DbContext
 {

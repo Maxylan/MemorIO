@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-using Reception.Interfaces;
-using Reception.Interfaces.DataAccess;
-using Reception.Database.Models;
-using Reception.Models;
+using MemorIO.Interfaces;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Database.Models;
+using MemorIO.Models;
 using System.Net;
 
-namespace Reception.Services;
+namespace MemorIO.Services;
 
 public class CategoryHandler(
     ILoggingService<CategoryHandler> logging,
@@ -177,8 +177,8 @@ public class CategoryHandler(
     }
 
     /// <summary>
-    /// Removes an <see cref="Reception.Database.Models.Album"/> (..identified by PK <paramref name="albumId"/>) from the
-    /// <see cref="Reception.Database.Models.Category"/> identified by its PK <paramref name="categoryId"/>.
+    /// Removes an <see cref="MemorIO.Database.Models.Album"/> (..identified by PK <paramref name="albumId"/>) from the
+    /// <see cref="MemorIO.Database.Models.Category"/> identified by its PK <paramref name="categoryId"/>.
     /// </summary>
     public async Task<ActionResult> RemoveAlbum(int categoryId, int albumId)
     {

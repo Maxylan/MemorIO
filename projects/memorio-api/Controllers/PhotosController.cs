@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Http.Timeouts;
 using Microsoft.AspNetCore.Authorization;
-using Reception.Database;
-using Reception.Database.Models;
-using Reception.Models;
-using Reception.Interfaces;
-using Reception.Constants;
+using MemorIO.Database;
+using MemorIO.Database.Models;
+using MemorIO.Models;
+using MemorIO.Interfaces;
+using MemorIO.Constants;
 
-namespace Reception.Controllers;
+namespace MemorIO.Controllers;
 
 [Authorize]
 [ApiController]
@@ -402,7 +402,7 @@ public class PhotosController(
     #endregion
 
     /// <summary>
-    /// Toggles the 'Favorite' status of a <see cref="Reception.Database.Models.Photo"/> for a single user.
+    /// Toggles the 'Favorite' status of a <see cref="MemorIO.Database.Models.Photo"/> for a single user.
     /// </summary>
     [HttpPatch("{photo_id:int}/favorite")]
     [Tags(ControllerTags.PHOTOS_ENTITIES, ControllerTags.USERS)]

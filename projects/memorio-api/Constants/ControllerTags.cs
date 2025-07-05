@@ -1,4 +1,4 @@
-namespace Reception.Constants;
+namespace MemorIO.Constants;
 
 /// <summary>
 /// Controller Constants, tags for endpoints to help separate them in Swagger UI.

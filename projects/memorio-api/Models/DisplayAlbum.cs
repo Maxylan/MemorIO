@@ -1,10 +1,10 @@
-using Reception.Database.Models;
+using MemorIO.Database.Models;
 
-namespace Reception.Models;
+namespace MemorIO.Models;
 
 /// <summary>
-/// Collection of all photos (<see cref="Reception.Models.DisplayPhoto"/>) inside the the given
-/// <paramref name="album"/> (<see cref="Reception.Database.Models.AlbumDTO"/>).
+/// Collection of all photos (<see cref="MemorIO.Models.DisplayPhoto"/>) inside the the given
+/// <paramref name="album"/> (<see cref="MemorIO.Database.Models.AlbumDTO"/>).
 /// </summary>
 public record class DisplayAlbum
 {

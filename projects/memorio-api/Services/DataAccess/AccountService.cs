@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Reception.Database.Models;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Database;
-using Reception.Models;
+using MemorIO.Database.Models;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Database;
+using MemorIO.Models;
 using System.Net;
 
-namespace Reception.Services.DataAccess;
+namespace MemorIO.Services.DataAccess;
 
 public class AccountService(
     ILoggingService<AccountService> logging,

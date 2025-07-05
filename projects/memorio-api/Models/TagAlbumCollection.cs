@@ -1,6 +1,6 @@
-using Reception.Database.Models;
+using MemorIO.Database.Models;
 
-namespace Reception.Models
+namespace MemorIO.Models
 {
     public struct TagAlbumCollection()
     {

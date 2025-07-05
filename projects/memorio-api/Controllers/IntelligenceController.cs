@@ -1,13 +1,13 @@
-using Reception.Models;
-using Reception.Database.Models;
-using Reception.Interfaces.DataAccess;
+using MemorIO.Models;
+using MemorIO.Database.Models;
+using MemorIO.Interfaces.DataAccess;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Http.Timeouts;
 using Microsoft.AspNetCore.Authorization;
-using Reception.Constants;
+using MemorIO.Constants;
 
-namespace Reception.Controllers;
+namespace MemorIO.Controllers;
 
 [Authorize]
 [ApiController]

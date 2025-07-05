@@ -1,14 +1,14 @@
 using System.Net;
-using Reception.Models;
-using Reception.Database;
-using Reception.Database.Models;
-using Reception.Interfaces;
-using Reception.Interfaces.DataAccess;
-using Reception.Middleware.Authentication;
+using MemorIO.Models;
+using MemorIO.Database;
+using MemorIO.Database.Models;
+using MemorIO.Interfaces;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Middleware.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Reception.Services.DataAccess;
+namespace MemorIO.Services.DataAccess;
 
 public class AlbumService(
     MageDb db,
@@ -265,7 +265,7 @@ public class AlbumService(
     }
 
     /// <summary>
-    /// Create a new <see cref="Reception.Database.Models.Album"/>.
+    /// Create a new <see cref="MemorIO.Database.Models.Album"/>.
     /// </summary>
     public async Task<ActionResult<Album>> CreateAlbum(MutateAlbum mut)
     {
@@ -561,7 +561,7 @@ public class AlbumService(
     }
 
     /// <summary>
-    /// Updates a <see cref="Reception.Database.Models.Album"/> in the database.
+    /// Updates a <see cref="MemorIO.Database.Models.Album"/> in the database.
     /// </summary>
     public async Task<ActionResult<Album>> UpdateAlbum(MutateAlbum mut)
     {
@@ -1426,7 +1426,7 @@ public class AlbumService(
     }
 
     /// <summary>
-    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{Reception.Database.Models.Tag}"/>).
+    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{MemorIO.Database.Models.Tag}"/>).
     /// </summary>
     public async Task<ActionResult<IEnumerable<Tag>>> AddTags(int albumId, IEnumerable<Tag> tags)
     {
@@ -1598,7 +1598,7 @@ public class AlbumService(
     }
 
     /// <summary>
-    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{Reception.Database.Models.Tag}"/>).
+    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tags"/> (<see cref="IEnumerable{MemorIO.Database.Models.Tag}"/>).
     /// </summary>
     public async Task<ActionResult<IEnumerable<Tag>>> RemoveTags(int albumId, IEnumerable<Tag> tags)
     {
@@ -1758,7 +1758,7 @@ public class AlbumService(
     }
 
     /// <summary>
-    /// Deletes the <see cref="Reception.Database.Models.Album"/> identified by <paramref name="albumId"/>
+    /// Deletes the <see cref="MemorIO.Database.Models.Album"/> identified by <paramref name="albumId"/>
     /// </summary>
     public async Task<ActionResult> DeleteAlbum(int albumId)
     {

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Reception.Database.Models;
+namespace MemorIO.Database.Models;
 
 /// <summary>
 /// The <see cref="Filepath"/> db-entity.
@@ -51,13 +51,13 @@ public partial class Filepath
     public virtual Photo Photo { get; set; } = null!;
 
     public bool IsSource =>
-        this.Dimension == Reception.Database.Dimension.SOURCE;
+        this.Dimension == MemorIO.Database.Dimension.SOURCE;
 
     public bool IsMedium =>
-        this.Dimension == Reception.Database.Dimension.MEDIUM;
+        this.Dimension == MemorIO.Database.Dimension.MEDIUM;
 
     public bool IsThumbnail =>
-        this.Dimension == Reception.Database.Dimension.THUMBNAIL;
+        this.Dimension == MemorIO.Database.Dimension.THUMBNAIL;
 
     /// <summary>
     /// Convert a <see cref="Filepath"/> instance to its <see cref="FilepathDTO"/> equivalent.
@@ -88,10 +88,10 @@ public partial class Filepath
 
             entity.Property(e => e.Dimension)
                 .HasColumnName("dimension")
-                .HasDefaultValue(Reception.Database.Dimension.SOURCE)
+                .HasDefaultValue(MemorIO.Database.Dimension.SOURCE)
                 .HasSentinel(null)
                 /* .HasConversion(
-                    x => x.ToString() ?? Reception.Database.Models.Dimension.SOURCE.ToString(),
+                    x => x.ToString() ?? MemorIO.Database.Models.Dimension.SOURCE.ToString(),
                     y => Enum.Parse<Dimension>(y, true)
                 ) */;
         }

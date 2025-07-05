@@ -1,7 +1,7 @@
 using System.Text;
-using Reception.Database.Models;
+using MemorIO.Database.Models;
 
-namespace Reception.Database;
+namespace MemorIO.Database;
 
 public readonly struct LogFormat(LogEntry entry)
 {

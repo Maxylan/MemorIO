@@ -3,16 +3,16 @@ using System.Text;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
-using Reception.Middleware.Authentication;
-using Reception.Database;
-using Reception.Database.Models;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Utilities;
-using Reception.Caching;
-using Reception.Models;
+using MemorIO.Middleware.Authentication;
+using MemorIO.Database;
+using MemorIO.Database.Models;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Utilities;
+using MemorIO.Caching;
+using MemorIO.Models;
 
-namespace Reception.Services;
+namespace MemorIO.Services;
 
 public class AuthorizationService(
     IHttpContextAccessor contextAccessor,
@@ -68,7 +68,7 @@ public class AuthorizationService(
         }
 
         var user = authenticationProperties!.GetParameter<Account>(
-            Reception.Middleware.Authentication.Constants.ACCOUNT_CONTEXT_KEY
+            MemorIO.Middleware.Authentication.Constants.ACCOUNT_CONTEXT_KEY
         );
         if (user is not null)
         {
@@ -83,7 +83,7 @@ public class AuthorizationService(
         }
 
         var session = authenticationProperties!.GetParameter<Session>(
-            Reception.Middleware.Authentication.Constants.SESSION_CONTEXT_KEY
+            MemorIO.Middleware.Authentication.Constants.SESSION_CONTEXT_KEY
         );
         if (session is not null)
         {
@@ -94,7 +94,7 @@ public class AuthorizationService(
         }
 
         bool tokenExists = authenticationProperties!.Items.TryGetValue(
-            Reception.Middleware.Authentication.Constants.TOKEN_CONTEXT_KEY,
+            MemorIO.Middleware.Authentication.Constants.TOKEN_CONTEXT_KEY,
             out string? token
         );
         if (tokenExists && !string.IsNullOrWhiteSpace(token))

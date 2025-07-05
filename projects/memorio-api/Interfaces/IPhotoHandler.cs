@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Reception.Database.Models;
-using Reception.Models;
+using MemorIO.Database.Models;
+using MemorIO.Models;
 
-namespace Reception.Interfaces;
+namespace MemorIO.Interfaces;
 
 public interface IPhotoHandler
 {
@@ -31,7 +31,7 @@ public interface IPhotoHandler
 
     #region Get many photos.
     /// <summary>
-    /// Get all <see cref="Reception.Database.Models.Photo"/> instances matching a wide range of optional filtering / pagination options (<seealso cref="FilterPhotosOptions"/>).
+    /// Get all <see cref="MemorIO.Database.Models.Photo"/> instances matching a wide range of optional filtering / pagination options (<seealso cref="FilterPhotosOptions"/>).
     /// </summary>
     public virtual Task<ActionResult<IEnumerable<PhotoDTO>>> GetPhotos(Action<FilterPhotosOptions> opts)
     {
@@ -42,7 +42,7 @@ public interface IPhotoHandler
     }
 
     /// <summary>
-    /// Assemble a <see cref="IEnumerable{Reception.Database.Models.Photo}"/> collection of Photos matching a wide range of optional
+    /// Assemble a <see cref="IEnumerable{MemorIO.Database.Models.Photo}"/> collection of Photos matching a wide range of optional
     /// filtering / pagination options (<seealso cref="FilterPhotosOptions"/>).
     /// </summary>
     public abstract Task<ActionResult<IEnumerable<PhotoDTO>>> GetPhotos(FilterPhotosOptions filter);
@@ -67,7 +67,7 @@ public interface IPhotoHandler
 
 
     /// <summary>
-    /// Get all <see cref="Reception.Database.Models.Photo"/> instances by evaluating a wide range of optional search / pagination options (<seealso cref="PhotoSearchQuery"/>).
+    /// Get all <see cref="MemorIO.Database.Models.Photo"/> instances by evaluating a wide range of optional search / pagination options (<seealso cref="PhotoSearchQuery"/>).
     /// </summary>
     public virtual Task<ActionResult<IEnumerable<PhotoDTO>>> PhotoSearch(string searchTerm, Action<PhotoSearchQuery> opts)
     {
@@ -78,7 +78,7 @@ public interface IPhotoHandler
     }
 
     /// <summary>
-    /// Assemble a <see cref="IEnumerable{Reception.Database.Models.Photo}"/> collection of Photos by evaluating a wide range of optional
+    /// Assemble a <see cref="IEnumerable{MemorIO.Database.Models.Photo}"/> collection of Photos by evaluating a wide range of optional
     /// search / pagination options (<seealso cref="PhotoSearchQuery"/>).
     /// </summary>
     public abstract Task<ActionResult<IEnumerable<PhotoDTO>>> PhotoSearch(string searchTerm, PhotoSearchQuery searchQuery);
@@ -105,7 +105,7 @@ public interface IPhotoHandler
 
     #region Create a photo entity.
     /// <summary>
-    /// Create a <see cref="Reception.Database.Models.Photo"/> in the database.
+    /// Create a <see cref="MemorIO.Database.Models.Photo"/> in the database.
     /// </summary>
     public abstract Task<ActionResult<PhotoDTO>> CreatePhoto(MutatePhoto mut);
     #endregion
@@ -113,27 +113,27 @@ public interface IPhotoHandler
 
     #region Update a photo entity.
     /// <summary>
-    /// Toggles the 'Favorite' status of a <see cref="Reception.Database.Models.Photo"/> for a single user.
+    /// Toggles the 'Favorite' status of a <see cref="MemorIO.Database.Models.Photo"/> for a single user.
     /// </summary>
     public abstract Task<ActionResult> ToggleFavorite(int photoId);
 
 
     /// <summary>
-    /// Updates a <see cref="Reception.Database.Models.Photo"/> in the database.
+    /// Updates a <see cref="MemorIO.Database.Models.Photo"/> in the database.
     /// </summary>
     public abstract Task<ActionResult<PhotoDTO>> UpdatePhoto(MutatePhoto mut);
 
 
     /// <summary>
-    /// Adds the given <see cref="IEnumerable{Reception.Database.Models.Tag}"/> collection (<paramref name="tags"/>) to the
-    /// <see cref="Reception.Database.Models.Photo"/> identified by its PK <paramref name="photoId"/>.
+    /// Adds the given <see cref="IEnumerable{MemorIO.Database.Models.Tag}"/> collection (<paramref name="tags"/>) to the
+    /// <see cref="MemorIO.Database.Models.Photo"/> identified by its PK <paramref name="photoId"/>.
     /// </summary>
     public abstract Task<ActionResult<IEnumerable<TagDTO>>> AddTags(int photoId, IEnumerable<ITag> tags);
 
 
     /// <summary>
-    /// Removes the given <see cref="IEnumerable{Reception.Database.Models.Tag}"/> collection (<paramref name="tags"/>) from
-    /// the <see cref="Reception.Database.Models.Photo"/> identified by its PK <paramref name="photoId"/>.
+    /// Removes the given <see cref="IEnumerable{MemorIO.Database.Models.Tag}"/> collection (<paramref name="tags"/>) from
+    /// the <see cref="MemorIO.Database.Models.Photo"/> identified by its PK <paramref name="photoId"/>.
     /// </summary>
     public abstract Task<ActionResult<IEnumerable<TagDTO>>> RemoveTags(int photoId, IEnumerable<ITag> tags);
     #endregion
@@ -141,7 +141,7 @@ public interface IPhotoHandler
 
     #region Delete a photo completely (blob, filepaths & photo)
     /// <summary>
-    /// Deletes a <see cref="Reception.Database.Models.Photo"/> (..identified by PK <paramref name="photoId"/>) ..completely,
+    /// Deletes a <see cref="MemorIO.Database.Models.Photo"/> (..identified by PK <paramref name="photoId"/>) ..completely,
     /// removing both the blob on-disk, and its database entry.
     /// </summary>
     public abstract Task<ActionResult> DeletePhoto(int photoId);

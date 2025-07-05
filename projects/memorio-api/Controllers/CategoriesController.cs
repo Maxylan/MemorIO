@@ -3,13 +3,13 @@ using SixLabors.ImageSharp.Formats;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
-using Reception.Models;
-using Reception.Database.Models;
-using Reception.Interfaces;
-using Reception.Utilities;
-using Reception.Constants;
+using MemorIO.Models;
+using MemorIO.Database.Models;
+using MemorIO.Interfaces;
+using MemorIO.Utilities;
+using MemorIO.Constants;
 
-namespace Reception.Controllers;
+namespace MemorIO.Controllers;
 
 [Authorize]
 [ApiController]

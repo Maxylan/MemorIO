@@ -1,8 +1,8 @@
-using Reception.Models;
-using Reception.Database.Models;
+using MemorIO.Models;
+using MemorIO.Database.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Reception.Interfaces.DataAccess;
+namespace MemorIO.Interfaces.DataAccess;
 
 public interface IAlbumService
 {
@@ -28,12 +28,12 @@ public interface IAlbumService
     public abstract Task<ActionResult<IEnumerable<Album>>> GetAlbums(FilterAlbumsOptions filter);
 
     /// <summary>
-    /// Create a new <see cref="Reception.Database.Models.Album"/>.
+    /// Create a new <see cref="MemorIO.Database.Models.Album"/>.
     /// </summary>
     public abstract Task<ActionResult<Album>> CreateAlbum(MutateAlbum mut);
 
     /// <summary>
-    /// Updates an <see cref="Reception.Database.Models.Album"/> in the database.
+    /// Updates an <see cref="MemorIO.Database.Models.Album"/> in the database.
     /// </summary>
     public abstract Task<ActionResult<Album>> UpdateAlbum(MutateAlbum mut);
 
@@ -53,17 +53,17 @@ public interface IAlbumService
     public abstract Task<ActionResult<Album>> RemovePhotos(int albumId, IEnumerable<int> photoIds);
 
     /// <summary>
-    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tag"/> (<see cref="IEnumerable{Reception.Database.Models.Tag}"/>).
+    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tag"/> (<see cref="IEnumerable{MemorIO.Database.Models.Tag}"/>).
     /// </summary>
     public abstract Task<ActionResult<IEnumerable<Tag>>> AddTags(int albumId, IEnumerable<Tag> tag);
 
     /// <summary>
-    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tag"/> (<see cref="IEnumerable{Reception.Database.Models.Tag}"/>).
+    /// Update what tags are associated with this <see cref="Album"/> via <paramref name="tag"/> (<see cref="IEnumerable{MemorIO.Database.Models.Tag}"/>).
     /// </summary>
     public abstract Task<ActionResult<IEnumerable<Tag>>> RemoveTags(int albumId, IEnumerable<Tag> tag);
 
     /// <summary>
-    /// Deletes the <see cref="Reception.Database.Models.Album"/> identified by <paramref name="albumId"/>
+    /// Deletes the <see cref="MemorIO.Database.Models.Album"/> identified by <paramref name="albumId"/>
     /// </summary>
     public abstract Task<ActionResult> DeleteAlbum(int albumId);
 }

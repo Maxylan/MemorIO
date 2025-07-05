@@ -1,14 +1,14 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
-using Reception.Middleware.Authentication;
+using MemorIO.Middleware.Authentication;
 using Microsoft.EntityFrameworkCore;
-using Reception.Interfaces.DataAccess;
-using Reception.Interfaces;
-using Reception.Database.Models;
-using Reception.Database;
-using Reception.Models;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Interfaces;
+using MemorIO.Database.Models;
+using MemorIO.Database;
+using MemorIO.Models;
 
-namespace Reception.Services.DataAccess;
+namespace MemorIO.Services.DataAccess;
 
 public class CategoryService(
     MageDb db,
@@ -794,8 +794,8 @@ public class CategoryService(
     }
 
     /// <summary>
-    /// Removes an <see cref="Reception.Database.Models.Album"/> (..identified by PK <paramref name="albumId"/>) from the
-    /// <see cref="Reception.Database.Models.Category"/> identified by its PK <paramref name="categoryId"/>.
+    /// Removes an <see cref="MemorIO.Database.Models.Album"/> (..identified by PK <paramref name="albumId"/>) from the
+    /// <see cref="MemorIO.Database.Models.Category"/> identified by its PK <paramref name="categoryId"/>.
     /// </summary>
     public async Task<ActionResult> RemoveAlbum(int categoryId, int albumId)
     {

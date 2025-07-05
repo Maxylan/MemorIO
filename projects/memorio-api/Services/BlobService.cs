@@ -1,14 +1,14 @@
 using SixLabors.ImageSharp.Formats;
 using Microsoft.AspNetCore.Mvc;
-using Reception.Interfaces;
-using Reception.Interfaces.DataAccess;
-using Reception.Database;
-using Reception.Database.Models;
-using Reception.Utilities;
-using Reception.Middleware.Authentication;
+using MemorIO.Interfaces;
+using MemorIO.Interfaces.DataAccess;
+using MemorIO.Database;
+using MemorIO.Database.Models;
+using MemorIO.Utilities;
+using MemorIO.Middleware.Authentication;
 using System.Net;
 
-namespace Reception.Services;
+namespace MemorIO.Services;
 
 public class BlobService(
     ILoggingService<BlobService> logging,

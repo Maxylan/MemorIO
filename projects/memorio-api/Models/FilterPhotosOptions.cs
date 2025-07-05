@@ -1,6 +1,6 @@
-using Reception.Database;
+using MemorIO.Database;
 
-namespace Reception.Models;
+namespace MemorIO.Models;
 
 public class FilterPhotosOptions : PhotosOptions
 {

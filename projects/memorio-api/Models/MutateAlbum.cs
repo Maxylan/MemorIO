@@ -1,8 +1,8 @@
 using Swashbuckle.AspNetCore.Annotations;
 using System.Text.Json.Serialization;
-using Reception.Database.Models;
+using MemorIO.Database.Models;
 
-namespace Reception.Models;
+namespace MemorIO.Models;
 
 public class MutateAlbum : AlbumDTO
 {

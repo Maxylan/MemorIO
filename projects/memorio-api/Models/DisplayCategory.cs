@@ -1,10 +1,10 @@
-using Reception.Database.Models;
+using MemorIO.Database.Models;
 
-namespace Reception.Models;
+namespace MemorIO.Models;
 
 /// <summary>
-/// Collection of all albums (<see cref="Reception.Models.DisplayAlbum"/>) inside the the given
-/// <paramref name="category"/> (<see cref="Reception.Database.Models.AlbumDTO"/>).
+/// Collection of all albums (<see cref="MemorIO.Models.DisplayAlbum"/>) inside the the given
+/// <paramref name="category"/> (<see cref="MemorIO.Database.Models.AlbumDTO"/>).
 /// </summary>
 public record class DisplayCategory
 {
