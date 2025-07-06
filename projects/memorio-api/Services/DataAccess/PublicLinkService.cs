@@ -11,7 +11,7 @@ using MemorIO.Models;
 namespace MemorIO.Services.DataAccess;
 
 public class PublicLinkService(
-    MageDb db,
+    MemoDb db,
     ILoggingService<PublicLinkService> logging,
     IHttpContextAccessor contextAccessor,
     IPhotoService photos

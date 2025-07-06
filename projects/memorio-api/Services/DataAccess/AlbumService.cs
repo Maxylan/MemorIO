@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MemorIO.Services.DataAccess;
 
 public class AlbumService(
-    MageDb db,
+    MemoDb db,
     ILoggingService<AlbumService> logging,
     IHttpContextAccessor contextAccessor,
     ITagService tagService

@@ -6,7 +6,7 @@ using MemorIO.Database.Models;
 
 namespace MemorIO.Database;
 
-public partial class MageDb : DbContext
+public partial class MemoDb : DbContext
 {
     public static string IHateNpgsql()
     {
@@ -24,7 +24,7 @@ public partial class MageDb : DbContext
 
     private (CancellationTokenSource, CancellationToken) cancelOnDispose;
 
-    public MageDb()
+    public MemoDb()
     {
         CancellationTokenSource source = new();
         CancellationToken token = source.Token;
@@ -34,7 +34,7 @@ public partial class MageDb : DbContext
         );
     }
 
-    public MageDb(DbContextOptions<MageDb> options)
+    public MemoDb(DbContextOptions<MemoDb> options)
         : base(options)
     {
         CancellationTokenSource source = new();

@@ -10,7 +10,7 @@ using MemorIO.Models;
 namespace MemorIO.Services.DataAccess;
 
 public class EventLogService(
-    MageDb db,
+    MemoDb db,
     IHttpContextAccessor contextAccessor,
     ILogger<EventLogService> logger
 ) : IEventLogService

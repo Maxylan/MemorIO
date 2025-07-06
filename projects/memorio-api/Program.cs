@@ -113,16 +113,12 @@ public sealed class Program
             {
                 Url = ApiPathBase
             });
-
-            /* if (IsDevelopment) {
-                conf.IncludeXmlComments(Path.Combine(System.AppContext.BaseDirectory, "SwaggerAnnotations.xml"), true);
-            } */
         });
 
-        var dbDataSource = new NpgsqlDataSourceBuilder(MageDb.IHateNpgsql()).Build();
-        builder.Services.AddDbContext<MageDb>(opts =>
+        var dbDataSource = new NpgsqlDataSourceBuilder(MemoDb.IHateNpgsql()).Build();
+        builder.Services.AddDbContext<MemoDb>(opts =>
         {
-            opts.UseNpgsql(MageDb.IHateNpgsql(), opts =>
+            opts.UseNpgsql(MemoDb.IHateNpgsql(), opts =>
             {
                 opts.EnableRetryOnFailure().CommandTimeout(10);
 
@@ -200,7 +196,11 @@ public sealed class Program
 
             app.UseCors(options => {
                 options.AllowAnyHeader();
-                options.WithOrigins("https://torpssons.se", "http://localhost", "http://localhost:4200");
+                options.WithOrigins(
+                    "https://memorio.torpssons.se",
+                    "http://localhost",
+                    "http://localhost:4200"
+                    );
             });
         }
         else {

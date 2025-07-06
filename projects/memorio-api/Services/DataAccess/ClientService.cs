@@ -13,7 +13,7 @@ namespace MemorIO.Services.DataAccess;
 public class ClientService(
     IHttpContextAccessor contextAccessor,
     ILoggingService<ClientService> logging,
-    MageDb db
+    MemoDb db
 ) : IClientService
 {
     /// <summary>

@@ -13,7 +13,7 @@ namespace MemorIO.Services.DataAccess;
 public class TagService(
     ILoggingService<TagService> logging,
     IHttpContextAccessor contextAccessor,
-    MageDb db
+    MemoDb db
 ) : ITagService
 {
     /// <summary>

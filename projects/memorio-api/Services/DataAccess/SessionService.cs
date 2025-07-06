@@ -12,7 +12,7 @@ namespace MemorIO.Services.DataAccess;
 public class SessionService(
     ILoggingService<SessionService> logging,
     IHttpContextAccessor contextAccessor,
-    MageDb db
+    MemoDb db
 ) : ISessionService
 {
     /// <summary>

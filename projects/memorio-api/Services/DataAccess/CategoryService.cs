@@ -11,7 +11,7 @@ using MemorIO.Models;
 namespace MemorIO.Services.DataAccess;
 
 public class CategoryService(
-    MageDb db,
+    MemoDb db,
     ILoggingService<CategoryService> logging,
     IHttpContextAccessor contextAccessor
 ) : ICategoryService

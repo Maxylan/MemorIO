@@ -25,7 +25,7 @@ public class PhotoStreamingService(
     IPhotoService photoService,
     ITagService tagService,
     IIntelligenceService ai,
-    MageDb db
+    MemoDb db
 ) : IPhotoStreamingService
 {
     #region Create / Store photos.

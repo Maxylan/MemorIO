@@ -11,7 +11,7 @@ namespace MemorIO.Services.DataAccess;
 
 public class AccountService(
     ILoggingService<AccountService> logging,
-    MageDb db
+    MemoDb db
 ) : IAccountService
 {
     /// <summary>

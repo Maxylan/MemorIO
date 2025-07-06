@@ -12,7 +12,7 @@ using System.Net;
 namespace MemorIO.Services.DataAccess;
 
 public class PhotoService(
-    MageDb db,
+    MemoDb db,
     ILoggingService<PhotoService> logging,
     IHttpContextAccessor contextAccessor,
     ITagService tagService
