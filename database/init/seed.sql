@@ -1,5 +1,5 @@
--- Select the `magedb` database schema.
-SET search_path TO 'magedb';
+-- Select the `memodb` database schema.
+SET search_path TO 'memodb';
 
 -- Truncate tables (in case they already existed..)
 TRUNCATE TABLE accounts CASCADE;

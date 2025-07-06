@@ -10,7 +10,7 @@ namespace MemorIO.Database.Models;
 /// <summary>
 /// The <see cref="Account"/> db-entity.
 /// </summary>
-[Table("accounts", Schema = "magedb")]
+[Table("accounts", Schema = "memodb")]
 [Index("Email", Name = "accounts_email_key", IsUnique = true)]
 [Index("Username", Name = "accounts_username_key", IsUnique = true)]
 [Index("Email", Name = "idx_accounts_email", IsUnique = true)]
@@ -152,7 +152,7 @@ public partial class Account
                     j =>
                     {
                         j.HasKey("AccountId", "ClientId").HasName("account_clients_pkey");
-                        j.ToTable("account_clients", "magedb");
+                        j.ToTable("account_clients", "memodb");
                         j.HasIndex(new[] { "AccountId" }, "idx_account_clients_account_id");
                         j.HasIndex(new[] { "ClientId" }, "idx_account_clients_photo_id");
                         j.IndexerProperty<int>("AccountId").HasColumnName("account_id");

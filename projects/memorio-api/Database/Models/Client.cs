@@ -8,7 +8,7 @@ namespace MemorIO.Database.Models;
 /// <summary>
 /// The <see cref="Client"/> db-entity.
 /// </summary>
-[Table("clients", Schema = "magedb")]
+[Table("clients", Schema = "memodb")]
 [Index("LastVisit", Name = "idx_clients_last_visit")]
 public partial class Client : IDatabaseEntity<Client>
 {

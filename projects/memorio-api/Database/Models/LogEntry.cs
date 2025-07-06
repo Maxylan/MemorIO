@@ -10,7 +10,7 @@ namespace MemorIO.Database.Models;
 /// <summary>
 /// The <see cref="LogEntry"/> db-entity.
 /// </summary>
-[Table("logs", Schema = "magedb")]
+[Table("logs", Schema = "memodb")]
 [Index("CreatedAt", Name = "idx_logs_created_at")]
 public partial class LogEntry : IDatabaseEntity<LogEntry>
 {

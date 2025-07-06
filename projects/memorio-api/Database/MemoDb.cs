@@ -95,15 +95,15 @@ public partial class MemoDb : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder
-            .HasPostgresEnum<Dimension>("magedb", "dimension") // new[] { "THUMBNAIL", "MEDIUM", "SOURCE" }
-            .HasPostgresEnum<Method>("magedb", "method") // new[] { "HEAD", "GET", "POST", "PUT", "PATCH", "DELETE" }
-            .HasPostgresEnum<Severity>("magedb", "severity") // new[] { "TRACE", "DEBUG", "INFORMATION", "SUSPICIOUS", "WARNING", "ERROR", "CRITICAL" }
-            .HasPostgresEnum<Source>("magedb", "source", new NpgsqlNullNameTranslator()); // new[] { "INTERNAL", "EXTERNAL" }
+            .HasPostgresEnum<Dimension>("memodb", "dimension") // new[] { "THUMBNAIL", "MEDIUM", "SOURCE" }
+            .HasPostgresEnum<Method>("memodb", "method") // new[] { "HEAD", "GET", "POST", "PUT", "PATCH", "DELETE" }
+            .HasPostgresEnum<Severity>("memodb", "severity") // new[] { "TRACE", "DEBUG", "INFORMATION", "SUSPICIOUS", "WARNING", "ERROR", "CRITICAL" }
+            .HasPostgresEnum<Source>("memodb", "source", new NpgsqlNullNameTranslator()); // new[] { "INTERNAL", "EXTERNAL" }
         /* modelBuilder
-            .HasPostgresEnum("magedb", "dimension", new[] { "THUMBNAIL", "MEDIUM", "SOURCE" })
-            .HasPostgresEnum("magedb", "method", new[] { "UNKNOWN", "HEAD", "GET", "POST", "PUT", "PATCH", "DELETE" })
-            .HasPostgresEnum("magedb", "severity", new[] { "TRACE", "DEBUG", "INFORMATION", "SUSPICIOUS", "WARNING", "ERROR", "CRITICAL" })
-            .HasPostgresEnum("magedb", "source", new[] { "INTERNAL", "EXTERNAL" }); */
+            .HasPostgresEnum("memodb", "dimension", new[] { "THUMBNAIL", "MEDIUM", "SOURCE" })
+            .HasPostgresEnum("memodb", "method", new[] { "UNKNOWN", "HEAD", "GET", "POST", "PUT", "PATCH", "DELETE" })
+            .HasPostgresEnum("memodb", "severity", new[] { "TRACE", "DEBUG", "INFORMATION", "SUSPICIOUS", "WARNING", "ERROR", "CRITICAL" })
+            .HasPostgresEnum("memodb", "source", new[] { "INTERNAL", "EXTERNAL" }); */
 
         modelBuilder.Entity(Account.Build);
         modelBuilder.Entity(Album.Build);

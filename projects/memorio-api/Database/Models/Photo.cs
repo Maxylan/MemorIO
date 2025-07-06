@@ -9,7 +9,7 @@ namespace MemorIO.Database.Models;
 /// <summary>
 /// The <see cref="Photo"/> db-entity.
 /// </summary>
-[Table("photos", Schema = "magedb")]
+[Table("photos", Schema = "memodb")]
 [Index("Slug", Name = "idx_photos_slug")]
 [Index("UpdatedAt", Name = "idx_photos_updated_at")]
 [Index("Slug", Name = "photos_slug_key", IsUnique = true)]

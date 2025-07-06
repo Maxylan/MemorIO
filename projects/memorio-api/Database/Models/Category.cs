@@ -8,7 +8,7 @@ namespace MemorIO.Database.Models;
 /// <summary>
 /// The <see cref="Category"/> db-entity.
 /// </summary>
-[Table("categories", Schema = "magedb")]
+[Table("categories", Schema = "memodb")]
 [Index("Title", Name = "categories_title_key", IsUnique = true)]
 [Index("Title", Name = "idx_categories_title")]
 [Index("UpdatedAt", Name = "idx_categories_updated_at")]

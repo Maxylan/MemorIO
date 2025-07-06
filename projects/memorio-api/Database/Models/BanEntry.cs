@@ -8,7 +8,7 @@ namespace MemorIO.Database.Models;
 /// <summary>
 /// The <see cref="BanEntry"/> db-entity.
 /// </summary>
-[Table("banned_clients", Schema = "magedb")]
+[Table("banned_clients", Schema = "memodb")]
 [Index("ClientId", Name = "idx_banned_clients_client_id")]
 public partial class BanEntry : IDatabaseEntity<BanEntry>
 {

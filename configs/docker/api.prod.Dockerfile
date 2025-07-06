@@ -16,7 +16,7 @@ RUN dotnet publish -o /memorio-api
 # Runtime..
 FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine-composite
 
-ENV RECEPTION_ENVIRONMENT=Development
+ENV RECEPTION_ENVIRONMENT=Production
 
 WORKDIR /memorio-api
 COPY --link --from=build /memorio-api .

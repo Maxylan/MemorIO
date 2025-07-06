@@ -9,7 +9,7 @@ namespace MemorIO.Database.Models;
 /// The <see cref="PhotoTagRelation"/> db-entity.
 /// </summary>
 [PrimaryKey("PhotoId", "TagId")]
-[Table("photo_tags", Schema = "magedb")]
+[Table("photo_tags", Schema = "memodb")]
 [Index("PhotoId", Name = "idx_photo_tags_photo_id")]
 [Index("TagId", Name = "idx_photo_tags_tag_id")]
 public partial class PhotoTagRelation : IDatabaseEntity<PhotoTagRelation>

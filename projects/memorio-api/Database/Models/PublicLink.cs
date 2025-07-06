@@ -8,7 +8,7 @@ namespace MemorIO.Database.Models;
 /// <summary>
 /// The <see cref="PublicLink"/> db-entity.
 /// </summary>
-[Table("links", Schema = "magedb")]
+[Table("links", Schema = "memodb")]
 [Index("Code", Name = "idx_links_code")]
 [Index("PhotoId", Name = "idx_links_photo_id")]
 [Index("Code", Name = "links_code_key", IsUnique = true)]

@@ -27,11 +27,11 @@ public sealed class Program
     public static string? ApiInternalUrl => System.Environment.GetEnvironmentVariable("MEMORIO_URL");
     public static string? ApiUrl => System.Environment.GetEnvironmentVariable("APP_URL") ?? ApiInternalUrl;
 
-    public static string SecretaryName => System.Environment.GetEnvironmentVariable("SECRETARY_BASE_PATH") ?? "/secretary";
-    public static string SecretaryUrl => (System.Environment.GetEnvironmentVariable("SECRETARY_URL") ?? "http://localhost");
+    public static string OllamaName => System.Environment.GetEnvironmentVariable("OLLAMA_BASE_PATH") ?? "/secretary";
+    public static string OllamaUrl => (System.Environment.GetEnvironmentVariable("OLLAMA_URL") ?? "http://localhost");
 
     public static string Environment => (
-        System.Environment.GetEnvironmentVariable("MEMORIO_ENVIRONMENT") ??
+        System.Environment.GetEnvironmentVariable("MEMORIO_API_ENVIRONMENT") ??
         System.Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ??
         DEVELOPMENT_FLAG
     );
@@ -123,10 +123,10 @@ public sealed class Program
                 opts.EnableRetryOnFailure().CommandTimeout(10);
 
                 INpgsqlNameTranslator nameTranslator = new NpgsqlNullNameTranslator();
-                opts.MapEnum<Dimension>("dimension", "magedb", nameTranslator);
-                opts.MapEnum<Method>("method", "magedb", nameTranslator);
-                opts.MapEnum<Severity>("severity", "magedb", nameTranslator);
-                opts.MapEnum<Source>("source", "magedb", nameTranslator);
+                opts.MapEnum<Dimension>("dimension", "memodb", nameTranslator);
+                opts.MapEnum<Method>("method", "memodb", nameTranslator);
+                opts.MapEnum<Severity>("severity", "memodb", nameTranslator);
+                opts.MapEnum<Source>("source", "memodb", nameTranslator);
             });
 
             if (IsDevelopment)

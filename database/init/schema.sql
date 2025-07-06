@@ -1,8 +1,8 @@
--- Create the `magedb` database schema.
-CREATE SCHEMA IF NOT EXISTS magedb;
-SET search_path TO 'magedb';
+-- Create the `memodb` database schema.
+CREATE SCHEMA IF NOT EXISTS memodb;
+SET search_path TO 'memodb';
 
--- Timezone of the `magedb` database schema.
+-- Timezone of the `memodb` database schema.
 SET timezone TO 'Europe/Stockholm';
 SET datestyle TO 'Euro';
 

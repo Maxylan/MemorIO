@@ -1,0 +1,141 @@
+# 2025-01-02 // maxylan@torpssons.se
+networks:
+  memorionet:
+    driver: bridge
+  memorio-inet:
+    driver: none
+
+volumes:
+  memorio.db_data:
+  memorio.ollama_data:
+
+services:
+  memorio.memodb: # Postgresql Database
+    container_name: memodb
+    restart: unless-stopped
+    image: postgres:17.2
+    command: [ "-p", "${MEMODB_PORT}" ]
+    volumes:
+      - "${DATABASE_MOUNT_POINT}/init:/docker-entrypoint-initdb.d"
+      - "memorio.db_data:/${DATABASE_VOLUME_TARGET}"
+    environment:
+      MEMORIO_NAME: "${MEMORIO_NAME}"
+      MEMORIO_RELEASE: "${MEMORIO_RELEASE}"
+      API_VERSION: "${API_VERSION}"
+      STORAGE_ENVIRONMENT: "${STORAGE_ENVIRONMENT}"
+      PGTZ: "Europe/Stockholm"
+      TZ: "Europe/Stockholm"
+    env_file:
+      - "${STORAGE_CONFIGURATION_FILE}"
+    networks:
+      - memorionet
+    expose:
+      - "${STORAGE_PORT}"
+    ports:
+      - "${STORAGE_PORT}"
+
+  memorio.adminer: # Postgresql Database UI for the browser
+    container_name: adminer
+    restart: unless-stopped
+    image: adminer:5
+    environment:
+      MEMORIO_NAME: "${MEMORIO_NAME}"
+      MEMORIO_RELEASE: "${MEMORIO_RELEASE}"
+      ADMINER_PLUGINS: "tables-filter tinymce"
+      ADMINER_DEFAULT_SERVER: "adminer:${MEMODB_PORT}"
+      ADMINER_DEFAULT_DB_DRIVER: "pgsql"
+      ADMINER_PORT: "${ADMINER_PORT}"
+      ADMINER_DESIGN: "dracula"
+      PGTZ: "Europe/Stockholm"
+      TZ: "Europe/Stockholm"
+    networks:
+      - memorionet
+    ports:
+      - "${ADMINER_PORT}"
+      - "8080"
+
+  memorio.api: # ASP.NET 9.0 Backend
+    container_name: api
+    build: 
+      context: .
+      dockerfile: "./configs/docker/api.dev.Dockerfile"
+    entrypoint: [ "${API_VOLUME_TARGET}" ]
+    restart: unless-stopped
+    environment:
+      API_VERSION: "${API_VERSION}"
+      MEMORIO_NAME: "${MEMORIO_NAME}"
+      MEMORIO_RELEASE: "${MEMORIO_RELEASE}"
+      ASPNETCORE_ENVIRONMENT: "${MEMORIO_API_ENVIRONMENT}"
+      MEMORIO_API_ENVIRONMENT: "${MEMORIO_API_ENVIRONMENT}"
+      MEMORIO_BLOB_STORAGE_FOLDER: "${MEMORIO_BLOB_STORAGE_FOLDER}"
+      MEMORIO_BLOB_STORAGE_PATH: "${API_VOLUME_TARGET}"
+      OLLAMA_PORT: "${OLLAMA_PORT}"
+      HTTP_PORTS: "${API_PORT}"
+      API_PORT: "${API_PORT}"
+    env_file:
+      - ./configs/db.env
+    networks:
+      - memorionet
+    expose:
+      - "${API_PORT}"
+
+  memorio.garden: # Angular 2 Frontend (Apache2 / httpd)
+    container_name: frontend
+    restart: unless-stopped
+    build: # image: httpd:2.4-alpine
+      context: .
+      dockerfile: "./configs/docker/frontend.Dockerfile"
+    working_dir: "${FRONTEND_VOLUME_TARGET}"
+    command: [ "apachectl", "-D", "FOREGROUND" ]
+    volumes:
+      - "./configs/apache/frontend-httpd.conf:/usr/local/apache2/conf/httpd.conf"
+      - "./configs/apache/frontend-httpd-memorio.conf:/usr/local/apache2/conf/extra/frontend-httpd-memorio.conf"
+      - "${FRONTEND_MOUNT_POINT}/dist/frontend:${FRONTEND_VOLUME_TARGET}"
+    environment:
+      MEMORIO_NAME: "${MEMORIO_NAME}"
+      MEMORIO_RELEASE: "${MEMORIO_RELEASE}"
+      FRONTEND_VERSION: "${FRONTEND_VERSION}"
+      DNS_NAME: "${DNS_NAME}"
+      AUTH_URL: "https://${DNS_NAME}/auth"
+      APACHE_LOG_DIR: "/var/log/apache2/memorio"
+      FRONTEND_PORT: "${FRONTEND_PORT}"
+      ADMINER_PORT: "${ADMINER_PORT}"
+      OLLAMA_PORT: "${OLLAMA_PORT}"
+      MEMODB_PORT: "${MEMODB_PORT}"
+      API_PORT: "${API_PORT}"
+    networks:
+      - memorionet
+    expose:
+      - "${GARDEN_PORT}"
+
+  memorio.auth: # Angular 2 Frontend (Apache2 / httpd)
+    container_name: auth
+    restart: unless-stopped
+    build: # image: httpd:2.4-alpine
+      context: .
+      dockerfile: "./configs/docker/auth.Dockerfile"
+    working_dir: "${AUTH_VOLUME_TARGET}"
+    command: [ "apachectl", "-D", "FOREGROUND" ]
+    volumes:
+      - "./configs/apache/auth-httpd.conf:/usr/local/apache2/conf/httpd.conf"
+      - "./configs/apache/auth-httpd-memorio.conf:/usr/local/apache2/conf/extra/auth-httpd-memorio.conf"
+      - "${AUTH_MOUNT_POINT}/dist/guard:${AUTH_VOLUME_TARGET}"
+    environment:
+      MEMORIO_NAME: "${MEMORIO_NAME}"
+      MEMORIO_RELEASE: "${MEMORIO_RELEASE}"
+      AUTH_VERSION: "${AUTH_VERSION}"
+      STUNNEL_PORT: "${STUNNEL_PORT}"
+      FRONTEND_URI: "${FRONTEND_URI}"
+      ADMINER_URI: "${ADMINER_URI}"
+      OLLAMA_URI: "${OLLAMA_URI}"
+      API_URI: "${API_URI}"
+      DB_URI: "${DB_URI}"
+      DNS_NAME: "${DNS_NAME}"
+      APACHE_LOG_DIR: "/var/log/apache2/memorio"
+    networks:
+      - memorionet
+    expose:
+      - "${GUARD_PORT}"
+    ports:
+      - "80:${AUTH_PORT}"
+      - "443:${AUTH_PORT}"

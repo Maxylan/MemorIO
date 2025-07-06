@@ -8,7 +8,7 @@ namespace MemorIO.Database.Models;
 /// <summary>
 /// The <see cref="Filepath"/> db-entity.
 /// </summary>
-[Table("filepaths", Schema = "magedb")]
+[Table("filepaths", Schema = "memodb")]
 [Index("Filename", Name = "idx_filepaths_filename")]
 [Index("PhotoId", Name = "idx_filepaths_photo_id")]
 [Index("Path", "Filename", Name = "idx_path_filename", IsUnique = true)]

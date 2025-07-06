@@ -8,7 +8,7 @@ namespace MemorIO.Database.Models;
 /// <summary>
 /// The <see cref="Session"/> db-entity.
 /// </summary>
-[Table("sessions", Schema = "magedb")]
+[Table("sessions", Schema = "memodb")]
 [Index("AccountId", Name = "idx_sessions_account_id")]
 [Index("ClientId", Name = "idx_sessions_client_id")]
 [Index("Code", Name = "sessions_code_key", IsUnique = true)]

@@ -9,7 +9,7 @@ namespace MemorIO.Database.Models;
 /// The <see cref="FavoriteAlbumRelation"/> db-entity.
 /// </summary>
 [PrimaryKey("AccountId", "AlbumId")]
-[Table("favorite_albums", Schema = "magedb")]
+[Table("favorite_albums", Schema = "memodb")]
 [Index("AccountId", Name = "idx_favorite_albums_account_id")]
 [Index("AlbumId", Name = "idx_favorite_albums_album_id")]
 public partial class FavoriteAlbumRelation : IDatabaseEntity<FavoriteAlbumRelation>

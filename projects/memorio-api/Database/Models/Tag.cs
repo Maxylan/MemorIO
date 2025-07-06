@@ -8,7 +8,7 @@ namespace MemorIO.Database.Models;
 /// <summary>
 /// The <see cref="Tag"/> db-entity.
 /// </summary>
-[Table("tags", Schema = "magedb")]
+[Table("tags", Schema = "memodb")]
 [Index("Name", Name = "idx_tags_name")]
 [Index("Name", Name = "tags_name_key", IsUnique = true)]
 public partial class Tag : IDatabaseEntity<Tag>, ITag

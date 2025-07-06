@@ -1,7 +1,6 @@
 using System.Net;
 using MemorIO.Middleware.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using MemorIO.Interfaces.DataAccess;
 using MemorIO.Interfaces;
 using MemorIO.Database.Models;
