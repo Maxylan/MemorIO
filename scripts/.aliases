@@ -1,0 +1,4 @@
+alias deploy-auth="ssh -F ~/.ssh/config auth.torpssons.se '~/memorio-deploy-auth.sh'"
+alias deploy-frontend="ssh -F ~/.ssh/config backend.torpssons.se '~/memorio-deploy-frontend.sh'"
+alias deploy-api="ssh -F ~/.ssh/config backend.torpssons.se '~/memorio-deploy-api.sh'"
+alias deploy-ollama="ssh -F ~/.ssh/config backend.torpssons.se '~/memorio-deploy-ollama.sh'"

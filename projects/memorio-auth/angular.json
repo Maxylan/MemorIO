@@ -40,7 +40,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/guard",
+            "outputPath": "dist/auth",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
