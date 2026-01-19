@@ -18,7 +18,7 @@
     "@angular/platform-browser": "^20.0.4",
     "@angular/platform-browser-dynamic": "^20.0.4",
     "@angular/router": "^20.0.4",
-    "npm": "^11.0.0",
+    "npm": "^11.7.0",
     "run": "^1.5.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
